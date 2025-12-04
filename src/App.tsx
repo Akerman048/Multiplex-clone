@@ -27,7 +27,10 @@ const router = createBrowserRouter([
   {path:"login",
         element: <Login/>
       },
-]);
+]
+, {
+  basename: "/Multiplex-clone",
+});
 
 export const App: FC = () => {
   return (
