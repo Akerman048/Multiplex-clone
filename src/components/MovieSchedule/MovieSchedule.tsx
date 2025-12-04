@@ -24,7 +24,7 @@ export const MovieSchedule: FC<MovieScheduleProps> = ({ movie }) => {
     currentDayIndex == 0 ? "sunday" : daysOfWeeks[currentDayIndex - 1];
   console.log(initialDay);
 
-  const [dateSelect, setDateSelect] = useState(initialDay);
+  const [dateSelect, ] = useState(initialDay);
   const [chosenDay, setChosenDay] = useState(initialDay);
   const [showDaysOfWeek, setShowDaysOfWeek] = useState(false);
 

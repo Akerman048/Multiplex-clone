@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import { Navigation } from "../components/Navigation/Navigation";
 import { Outlet } from "react-router-dom";
 import "../index.css";
