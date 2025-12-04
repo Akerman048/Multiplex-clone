@@ -1,10 +1,15 @@
 .postersList {
   display: flex;
-  overflow-x: scroll;
-  overflow-x: hidden;
+  overflow-x: auto;
   scroll-behavior: smooth;
-  margin-left: 0px;
-  transition: margin-left 0.3s ease;
+  margin-left: 0;
+}
+
+.postersList {
+  scrollbar-width: none;
+}
+.postersList::-webkit-scrollbar {
+  display: none;
 }
 
 .linkWrap {

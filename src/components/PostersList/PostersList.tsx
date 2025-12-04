@@ -11,7 +11,6 @@ import { MovieSchedule, WeekDays } from "../../types/schedule";
 
 export const PostersList = () => {
   const postersListRef = useRef<HTMLDivElement>(null);
-  const [maxScroll, setMaxScroll] = useState(0);
   const itemWidthRef = useRef(0);
 
   const weekDays = [
@@ -58,37 +57,22 @@ export const PostersList = () => {
 
   // width calculation
   useEffect(() => {
-    if (postersListRef.current) {
-      const item = postersListRef.current.querySelector(`.${s.linkWrap}`);
-      itemWidthRef.current = item?.getBoundingClientRect().width || 0;
-
-      const maxScrollValue =
-        postersListRef.current.scrollWidth - postersListRef.current.clientWidth;
-      setMaxScroll(maxScrollValue);
-    }
+    if (!postersListRef.current) return;
+    const item = postersListRef.current.querySelector(`.${s.linkWrap}`) as HTMLDivElement | null;
+    itemWidthRef.current = item?.getBoundingClientRect().width || 0;
   }, []);
-
-  // scroll logic
+  
   const handleWheel = (e: React.WheelEvent<HTMLDivElement>) => {
     e.preventDefault();
-    if (!postersListRef.current) return;
-
-    const currentMarginLeft = parseInt(
-      postersListRef.current.style.marginLeft || "0"
-    );
-    const direction = e.deltaY > 0 ? -1 : 1;
-
-    if (direction === 1 && currentMarginLeft >= 0) return;
-
-    const maxMarginLeft = -maxScroll;
-    if (direction === -1 && currentMarginLeft <= maxMarginLeft) return;
-
-    postersListRef.current.style.marginLeft = `${Math.max(
-      Math.min(currentMarginLeft + itemWidthRef.current * direction, 0),
-      maxMarginLeft
-    )}px`;
+    if (!postersListRef.current || !itemWidthRef.current) return;
+  
+    const direction = e.deltaY > 0 ? 1 : -1; // вниз – вправо, вгору – вліво
+  
+    postersListRef.current.scrollTo({
+      left: postersListRef.current.scrollLeft + direction * itemWidthRef.current,
+      behavior: "smooth",
+    });
   };
-
   return (
     <div className={s.postersList} ref={postersListRef} onWheel={handleWheel}>
       {movies.map((movie) => {

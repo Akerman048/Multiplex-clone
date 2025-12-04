@@ -1,6 +1,6 @@
 .navigation {
   display: block;
-  
+
   align-items: center;
   width: 100%;
   height: 60px;
@@ -14,10 +14,9 @@
   width: 100vw;
   height: 100vh;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 90;          /* менше ніж у меню */
+  z-index: 90; /* менше ніж у меню */
   backdrop-filter: blur(2px);
 }
-
 
 .menuBtn {
   display: block;
@@ -76,11 +75,11 @@
   background-color: #ff0000;
 }
 
-
 /* burger menu */
 
-.burgerMenuWrap{
+.burgerMenuWrap {
   display: flex;
+  flex-direction: column;
   position: fixed;
   left: 0;
   top: 0;
@@ -92,34 +91,38 @@
   padding: 10px;
   z-index: 100;
   overflow-y: auto;
-margin-bottom: 20px;
   transform: translateX(-100%);
-  transition: transform .6s ease;
+  transition: transform 0.6s ease;
 }
 
-.burgerMenuOpen{
+.burgerMenuOpen {
   transform: translateX(0);
 }
 
-
-.closeIcon{
-  align-self: flex-start;
-  justify-self: flex-start;
+.closeIcon {
+  position: absolute;
+  top: 16px;
+  left: 16px;
   font-size: 42px;
   cursor: pointer;
-  transition: .3s ease;
+  transition: 0.3s ease;
   color: rgb(85, 85, 85);
+  z-index: 110; 
 }
 
-.closeIcon:hover{
+.closeIcon:hover {
   color: #ff0000;
 }
 
-.burgerMenuContent{height: auto;
+.burgerMenuContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 72px 16px 60px 22px;
 }
 
-.burgerMenuList{
+.burgerMenuList {
   font-size: 22px;
   display: flex;
   flex-direction: column;
@@ -127,48 +130,49 @@ margin-bottom: 20px;
   margin-bottom: 20px;
 }
 
-.burgerMenuList a{
-  transition: .3s ease;
+.burgerMenuList a {
+  transition: 0.3s ease;
   font-weight: 500;
-  }
-
-.burgerMenuList a:hover{
-color: rgba(209, 209, 209, 0.74);
 }
 
-.activeLink a{
-  cursor:default;
+.burgerMenuList a:hover {
+  color: rgba(209, 209, 209, 0.74);
+}
+
+.activeLink a {
+  cursor: default;
   color: red;
 }
 
-.activeLink a:hover{
+.activeLink a:hover {
   color: red;
 }
 
-.accent a{
+.accent a {
   color: yellow;
 }
 
-.burgerSignInWrap{
+.burgerSignInWrap {
   display: flex;
   flex-direction: column;
   gap: 12px;
   margin-bottom: 30px;
 }
 
-.burgerMenuSocialsWrap{
-   margin-bottom: 30px;
+.burgerMenuSocialsWrap {
+  margin-bottom: 30px;
 }
-.burgerSignInWrap span, .burgerMenuSocialsWrap span{
+.burgerSignInWrap span,
+.burgerMenuSocialsWrap span {
   color: rgba(191, 190, 190, 0.5);
-    
-    font-size: 8px;
-    font-weight: 700;
-    text-transform: uppercase;
-    line-height: 10px;
+
+  font-size: 8px;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 10px;
 }
 
-.burgerSignLink{
+.burgerSignLink {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -180,58 +184,55 @@ color: rgba(209, 209, 209, 0.74);
   max-width: 100px;
 }
 
-.burgerSignLinkIcon{
+.burgerSignLinkIcon {
   font-size: 20px;
   display: flex;
-  
 }
 
-.burgerSignLink:hover{
+.burgerSignLink:hover {
   color: #e4e4e4;
 }
 
-
-
-.burgerMenuSocialsList{
-display: flex;
-flex-direction: column;
-gap: 10px;
+.burgerMenuSocialsList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.burgerMenuSocialsLinkWrap{
- display: flex;
- gap: 10px;
+.burgerMenuSocialsLinkWrap {
+  display: flex;
+  gap: 10px;
 }
 
-.burgerMenuSocialsLinkWrap:hover .burgerSocialIcon{
+.burgerMenuSocialsLinkWrap:hover .burgerSocialIcon {
   border-color: red;
 }
 
-
-.burgerSocialIcon{
+.burgerSocialIcon {
   display: inline-block;
   font-size: 14px;
   width: 35px;
   height: 35px;
-  border: 1px  solid grey;
+  border: 1px solid grey;
   border-radius: 5px;
   padding: 5px;
   color: rgb(255, 255, 255);
   margin-right: 10px;
 }
 
-.burgerMenuSocialsLink{
+.burgerMenuSocialsLink {
   display: flex;
-  
+
   align-items: center;
 }
 
-@media screen and (max-width:1024px) {
-  .screenx, .lklink{
+@media screen and (max-width: 1024px) {
+  .screenx,
+  .lklink {
     display: none;
   }
 
-  .menuBtn{
+  .menuBtn {
     float: right;
   }
 }
