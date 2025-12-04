@@ -1,0 +1,108 @@
+.date{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #525151;
+    padding: 25px;
+}
+
+.heading{
+    font-weight: 500;
+}
+
+.daysWrap{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: #636363;
+    border-radius: 5px;
+    
+}
+
+.selectScheduleDate{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-size: 18px;
+    
+    text-align: start;
+    padding: 5px 10px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    padding-bottom: 5px;
+    cursor: pointer;
+    transition: .3s ease;
+    background-color: #636363;
+    z-index: 1;
+}
+
+
+
+.selectScheduleDate:hover{
+    background-color: rgb(255, 0, 0);
+}
+
+
+
+.dropDown{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    
+    left: 0;
+    right: 0;
+    top: 26px;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #636363;
+    padding-top: 5px;
+    padding-bottom: 20px;
+}
+
+.scheduleBody{
+    padding: 30px;
+}
+
+.timesRow{
+    display: flex;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.timesRow a:hover {
+    color: red;
+}
+
+.days{
+    position: relative;
+    padding: 10px;
+border-radius: 0;
+border: none;
+font-size: 17px;
+font-weight: 600;
+transition: .3s linear;
+color: #a5a5a5;
+background-color: #636363;
+cursor: pointer;
+}
+
+.activeDay{
+color: #ffffff;
+}
+
+.days:hover{
+    color: #f0f0f0;
+}
+
+.days::after{
+    position: absolute;
+    content: '';
+    
+    height: 1px;
+    left: 35px;
+    right: 35px;
+    bottom: 0px;
+    background-color: rgb(165, 165, 165);
+}

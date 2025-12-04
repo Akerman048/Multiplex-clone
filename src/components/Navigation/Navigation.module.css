@@ -1,0 +1,237 @@
+.navigation {
+  display: block;
+  
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  border-bottom: 1px rgba(128, 128, 128, 0.423) solid;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 90;          /* менше ніж у меню */
+  backdrop-filter: blur(2px);
+}
+
+
+.menuBtn {
+  display: block;
+  float: left;
+  width: 60px;
+  height: 60px;
+  padding: 10px 12px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.menuBtn:hover {
+  color: rgb(255, 200, 200);
+}
+
+.logolink {
+  display: block;
+  float: left;
+  height: 60px;
+}
+
+.logolink img {
+  max-height: 100%;
+}
+
+.screenx {
+  display: block;
+  float: right;
+  height: 60px;
+}
+
+.screenx img {
+  max-height: 100%;
+}
+
+.lklink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: right;
+  padding: 15px;
+  height: 60px;
+}
+
+.lklinkimg {
+  margin-left: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  padding: 6px;
+  width: 30px;
+  height: 30px;
+  transition: 0.3s ease;
+}
+
+.lklink:hover .lklinkimg {
+  background-color: #ff0000;
+}
+
+
+/* burger menu */
+
+.burgerMenuWrap{
+  display: flex;
+  position: fixed;
+  left: 0;
+  top: 0;
+  max-width: 15vw;
+  width: 100%;
+  min-width: 320px;
+  background-color: rgb(35, 35, 35);
+  height: 100vh;
+  padding: 10px;
+  z-index: 100;
+  overflow-y: auto;
+margin-bottom: 20px;
+  transform: translateX(-100%);
+  transition: transform .6s ease;
+}
+
+.burgerMenuOpen{
+  transform: translateX(0);
+}
+
+
+.closeIcon{
+  align-self: flex-start;
+  justify-self: flex-start;
+  font-size: 42px;
+  cursor: pointer;
+  transition: .3s ease;
+  color: rgb(85, 85, 85);
+}
+
+.closeIcon:hover{
+  color: #ff0000;
+}
+
+.burgerMenuContent{height: auto;
+  padding: 72px 16px 60px 22px;
+}
+
+.burgerMenuList{
+  font-size: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.burgerMenuList a{
+  transition: .3s ease;
+  font-weight: 500;
+  }
+
+.burgerMenuList a:hover{
+color: rgba(209, 209, 209, 0.74);
+}
+
+.activeLink a{
+  cursor:default;
+  color: red;
+}
+
+.activeLink a:hover{
+  color: red;
+}
+
+.accent a{
+  color: yellow;
+}
+
+.burgerSignInWrap{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.burgerMenuSocialsWrap{
+   margin-bottom: 30px;
+}
+.burgerSignInWrap span, .burgerMenuSocialsWrap span{
+  color: rgba(191, 190, 190, 0.5);
+    
+    font-size: 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 10px;
+}
+
+.burgerSignLink{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  font-weight: 500;
+  background-color: #ff0000;
+  border-radius: 5px;
+  padding: 5px 10px 5px 5px;
+  max-width: 100px;
+}
+
+.burgerSignLinkIcon{
+  font-size: 20px;
+  display: flex;
+  
+}
+
+.burgerSignLink:hover{
+  color: #e4e4e4;
+}
+
+
+
+.burgerMenuSocialsList{
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+
+.burgerMenuSocialsLinkWrap{
+ display: flex;
+ gap: 10px;
+}
+
+.burgerMenuSocialsLinkWrap:hover .burgerSocialIcon{
+  border-color: red;
+}
+
+
+.burgerSocialIcon{
+  display: inline-block;
+  font-size: 14px;
+  width: 35px;
+  height: 35px;
+  border: 1px  solid grey;
+  border-radius: 5px;
+  padding: 5px;
+  color: rgb(255, 255, 255);
+  margin-right: 10px;
+}
+
+.burgerMenuSocialsLink{
+  display: flex;
+  
+  align-items: center;
+}
+
+@media screen and (max-width:1024px) {
+  .screenx, .lklink{
+    display: none;
+  }
+
+  .menuBtn{
+    float: right;
+  }
+}

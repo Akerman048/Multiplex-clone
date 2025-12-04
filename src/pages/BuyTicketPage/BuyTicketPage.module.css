@@ -1,0 +1,318 @@
+.pageWrap {
+  position: relative;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+
+.nav {
+  display: flex;
+  width: 100%;
+
+  justify-content: space-between;
+  padding: 10px;
+  font-size: 32px;
+}
+
+.logolink img {
+  width: 100px;
+}
+
+
+
+.backBtn{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 22px;
+  padding: 5px 10px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.backBtn:hover {
+  color: red;
+}
+
+.movieInfoWrap {
+  display: flex;
+  gap: 20px;
+  border-top: 1px solid grey;
+  padding: 10px;
+}
+
+.movieInfo {
+  display: flex;
+}
+
+.movieInfoSchedule {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dateNtime {
+  display: flex;
+  gap: 20px;
+}
+
+.dateNtimeItem {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding: 10px 20px;
+  border: 1px solid grey;
+  border-radius: 10px;
+}
+
+.dateNtimeIcon {
+  font-size: 20px;
+  background-color: rgba(240, 248, 255, 0.407);
+}
+
+.sessionCard {
+  display: inline-flex;
+  align-items: stretch;
+
+  border-radius: 8px;
+  overflow: hidden; /* щоб ліва сіра частина зливалась з правою */
+  border: 1px solid #9f9e9e;
+
+  font-family: inherit;
+  cursor: default; /* або pointer, якщо це кнопка */
+}
+
+/* ліва частина з іконкою */
+.sessionCardIcon {
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #333232;
+  font-size: 22px; /* розмір іконки */
+}
+
+/* права частина з текстом */
+.sessionCardContent {
+  padding: 6px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* time */
+.sessionCardLabel {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 2px;
+}
+
+/* “17:40 - 19:27” */
+.sessionCardValue {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.poster {
+  max-width: 250px;
+  width: 100%;
+}
+
+.descr {
+  max-width: 40vw;
+  text-align: justify;
+}
+
+.screenWrap {
+  text-align: center;
+  margin: 40px 0 20px;
+}
+
+.seatPriceWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+/* screen */
+.screenLine {
+  width: 50%;
+  margin: 0 auto 10px;
+}
+
+.screenLabel {
+  font-size: 18px;
+  font-weight: 600;
+  color: #b1b0b0;
+  letter-spacing: 1px;
+}
+
+.seats {
+  display: grid;
+  grid-template-columns: repeat(10, 32px); /* 10 місць у ряд */
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.seat {
+  width: 32px;
+  height: 32px;
+
+  border: 1px solid rgb(34, 102, 250);
+  background: transparent;
+  border-radius: 6px;
+
+  cursor: pointer;
+  font-size: 12px;
+  padding: 0;
+
+  transition: 0.2s;
+}
+
+.seat:hover {
+  background: rgb(172, 201, 255);
+}
+
+/* вибране місце */
+.seat.selected {
+  background: rgb(79, 144, 249);
+  color: white;
+}
+
+/* зайняте місце */
+.seat:disabled {
+  background: #ccc;
+  border-color: #999;
+  cursor: not-allowed;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  height: 100%;
+  border-left: 1px solid grey;
+}
+
+.selectedSeatsWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.selectedSeatsTitle {
+  font-size: 32px;
+}
+
+.selectedSeat {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+
+  border: 1px solid rgb(255, 110, 110);
+  padding: 20px 60px 20px 20px;
+}
+
+.ticketPrice {
+  font-weight: 700;
+}
+
+.removeSeat {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 32px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.removeSeat:hover {
+  color: red;
+}
+
+.totalPriceWrap {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  text-align: end;
+  padding: 20px;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.buyBtn {
+  display: block;
+  font-size: 22px;
+  cursor: pointer;
+  width: 100%;
+  padding: 15px 80px;
+  background-color: red;
+  border: none;
+  border-radius: 10px;
+  transition: 0.3s ease;
+}
+
+.buyBtn:hover {
+  background-color: rgb(174, 6, 6);
+}
+
+
+.purchaseFormModal{
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #2f2e2ec7;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.purchaseFormClose{
+  position: absolute;
+  font-size: 42px;
+  top: 30px;
+  right: 30px;
+  cursor: pointer;
+}
+
+.purchaseFormClose:hover{
+  color: red;
+}
+
+@media screen and (max-width: 1024px) {
+  .pageWrap {
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  .movieInfoWrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    border-top: 1px solid grey;
+    padding: 10px;
+  }
+
+  .descr{
+    max-width: 80vw;
+  }
+
+  .screenWrap{
+    padding: 10px;
+  }
+}

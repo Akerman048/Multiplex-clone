@@ -1,0 +1,253 @@
+.loginWrap {
+  display: grid;
+  grid-template-columns: 0.8fr 1fr;
+}
+
+.loginFormLeft {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  color: #000;
+  background: white;
+}
+
+.loginFormLeft img {
+  max-width: 190px;
+  width: 100%;
+  margin-top: auto;
+}
+
+.loginFormLeft h3 {
+  font-size: 48px;
+  color: #3a3a3a;
+}
+
+.loginFormLeft p {
+  font-size: 26px;
+  text-align: center;
+  line-height: 4vh;
+  color: #828282;
+  max-width: 500px;
+}
+
+.loginInputLabel {
+  display: flex;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 28px;
+  margin-bottom: 16px;
+}
+
+.loginWrapInputSubmit {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 24px;
+}
+
+.loginLabel {
+  position: relative;
+  display: inline-block;
+}
+
+.loginPhonePrefix {
+  position: absolute;
+  left: 16px;
+  font-size: 24px;
+  line-height: 40px;
+  top: calc(50% + 1px);
+  transform: translateY(-50%);
+}
+
+.loginInput {
+  border: 1px solid rgba(34, 34, 34, 0.2);
+  border-radius: 4px;
+  transition: 0.25s;
+  font-size: 24px;
+  height: 40px;
+  color: #000;
+  background-color: transparent;
+}
+
+.loginPhoneInput {
+  padding-left: 86px;
+  font-family: Styrene A LC App, GothamPro, sans-serif;
+  box-sizing: border-box;
+  font-size: 24px;
+  line-height: 40px;
+  height: 68px;
+  max-width: 345px;
+  width: 100%;
+}
+
+.loginPhoneSubmit {
+  padding: 20px 40px;
+  color: #fff;
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 500;
+  background-color: #ededed;
+  border-radius: 10px;
+  display: inline-block;
+  cursor: pointer;
+  pointer-events: none;
+  transition: 0.25s;
+  border: none;
+}
+
+/* socail */
+
+.loginWithSocialWrap {
+  width: 100%;
+}
+
+.loginWrapSocialTitle {
+  position: relative;
+  margin-bottom: 24px;
+  font-size: 22px;
+  color: #828282;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%; /* ← важливо */
+}
+
+.stripe {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  top: 50%;
+  border-top: 1px solid #d4d4d4; /* тільки верхня лінія */
+  transform: translateY(-50%);
+}
+
+.socialTitle {
+  position: relative;
+  padding: 0 18px;
+  background: #fff;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+.socialLinks a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  padding: 15px;
+  background-color: red;
+  font-size: 42px;
+}
+
+.socialLinks a:hover {
+  background-color: rgb(187, 2, 2);
+}
+
+.lankBackWrap {
+  margin-top: auto;
+  margin-bottom: 20px;
+}
+
+.lankBackWrap span {
+  font-size: 19px;
+}
+
+.linkBack {
+  font-size: 22px;
+  color: red;
+}
+
+.linkBack:hover {
+  color: rgb(187, 2, 2);
+}
+
+/* right block*/
+.loginRight {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  height: 100vh;
+  padding: 0px 10px;
+  background: #7d7d7d;
+  background: linear-gradient(
+    180deg,
+    rgb(85, 85, 85) 10%,
+    rgba(51, 51, 51, 1) 31%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+
+.loginRight img {
+  margin: 20px 0px;
+}
+
+.loginRight h3 {
+  font-size: 28px;
+  text-align: center;
+}
+
+.loginRight p {
+  color: #7d7d7d;
+  font-size: clamp(18px, 19px, 24px);
+  font-weight: 500;
+  text-align: center;
+}
+
+@media screen and (max-width: 1024px) {
+  .loginWrap {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .loginFormWrap {
+    margin-bottom: 20px;
+  }
+
+  .loginFormLeft {
+    padding: 0px 10px;
+  }
+
+  .loginFormLeft h3 {
+    font-size: 6.4vw;
+  }
+
+  .loginFormLeft p {
+    font-size: 4.26667vw;
+    line-height: 6.4vw;
+    margin-bottom: 1vw;
+  }
+
+  .loginWrapInputSubmit {
+    justify-content: center;
+    max-width: 80vw;
+  }
+
+  .loginRight {
+    height: auto;
+  }
+
+  .loginRight img {
+    max-width: 80vw;
+    margin-bottom: 20px;
+  }
+
+  .loginRight h3 {
+    font-size: 6.4vw;
+  }
+}
