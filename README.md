@@ -47,8 +47,8 @@ src/
 ## Installation
 
 ```bash
-git clone your_repository_url
-cd your_project_name
+git clone https://github.com/Akerman048/Multiplex-clone
+cd Multiplex-clone
 npm install
 npm run dev
 ```
